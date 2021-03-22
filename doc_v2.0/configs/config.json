@@ -1,0 +1,35 @@
+{
+    "_comment": "",
+    
+    "dataset": {
+        "filename": "WIN_M5_20141119_20210319.csv",
+        "separador": ";",
+        "columns": ["DATE","TIME","OPEN","HIGH","LOW","CLOSE","VOL"],
+        "columns_real": ["OPEN","HIGH","LOW","CLOSE","VOL"],
+        "sequence_length": 5,
+        "max_sequence_length": 25,
+        "horizon": 3,
+        "buy": 150,
+        "sell": -150,
+        "valorizacao": 0.002,
+        "train_test_split": 0.95,
+        "create_new_dataframe": false,
+        "filepath": "C:/Users/auW10/Documents/CodigosDoAu/000_Doutorado/dataset/",
+        "dataframe_pkl_name": "dataset_with_Top6_TI.pkl",
+        "train_data_inicio": "2015",
+        "valid_data_inicio": "2018",
+        "valid_data_fim": "2019",
+        "test_data_fim": "2020"
+    },
+    
+    "training": {
+        "n_estimators": 10000,
+        "epochs": 20,
+        "loops": 2,
+        "batch_size": 150,
+        "train": true,
+        "test": true
+    }
+    
+}
+

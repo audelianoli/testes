@@ -1,0 +1,83 @@
+{
+    "_comment": "",
+        
+    "model": 
+    {
+        "_comment": "loss: mse",
+        "_comment": "loss: kullback_leibler_divergence",
+        "_comment": "loss: binary_crossentropy",        
+        "loss": "categorical_crossentropy",
+        
+        "_comment": "opt: SGD",
+        "optimizer": "adam",
+        
+        "save_dir": "saved_models",
+        "model_name": "lstm_qiu2020novel",
+        
+        "_comment": "SimpleRNN or LSTM or GRU -> true",     
+        "use_lstm": true,
+
+        "layers": 
+        [ 
+            {
+                "type": "lstm",
+                "neurons": 200,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },
+            {
+                "type": "lstm",
+                "neurons": 100,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },
+            {
+                "type": "lstm",
+                "neurons": 100,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },            
+            {
+                "type": "gru",
+                "neurons": 100,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },
+            {
+                "type": "gru",
+                "neurons": 100,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },
+            {
+                "type": "gru",
+                "neurons": 50,
+                "return_seq": false
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },
+            {
+                "type": "dense",
+                "neurons": 3,
+                "activation": "softmax"
+            }
+        ]
+    }
+}

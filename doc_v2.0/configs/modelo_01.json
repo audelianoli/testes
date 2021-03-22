@@ -1,0 +1,50 @@
+{
+    "_comment": "",
+        
+    "model": 
+    {
+        "_comment": "loss: mse",
+        "_comment": "loss: kullback_leibler_divergence",
+        "_comment": "loss: binary_crossentropy",        
+        "loss": "categorical_crossentropy",
+        
+        "_comment": "opt: SGD",
+        "optimizer": "adam",
+        
+        "save_dir": "saved_models",
+        "model_name": "dnn_simplao",
+        
+        "_comment": "SimpleRNN or LSTM or GRU -> true",     
+        "use_lstm": false,
+
+        "layers": 
+        [ 
+            {
+                "type": "input_dim"
+            },
+            {
+                "type": "dense",
+                "neurons": 30,
+                "activation": "relu"
+            },
+            {
+                "type": "dropout",
+                "rate": 0.4
+            },
+            {
+                "type": "dense",
+                "neurons": 15,
+                "activation": "relu"
+            },
+            {
+                "type": "dropout",
+                "rate": 0.4
+            },
+            {
+                "type": "dense",
+                "neurons": 3,
+                "activation": "softmax"
+            }
+        ]
+    }
+}

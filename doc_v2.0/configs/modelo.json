@@ -1,0 +1,217 @@
+{
+    "_comment": "",
+        
+    "model": {
+        "_comment": "loss: mse",
+        "_comment": "loss: kullback_leibler_divergence",
+        "_comment": "loss: binary_crossentropy",        
+        "loss": "categorical_crossentropy",
+        
+        "_comment": "opt: SGD",
+        "optimizer": "adam",
+        
+        "save_dir": "saved_models",
+        "model_name": "doc_v2",
+        
+        
+        
+         
+        "layers": [ 
+            {
+                "type": "lstm",
+                "neurons": 100,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },
+            {
+                "type": "gru",
+                "_comment": "modelo 3: 100",
+                "neurons": 50,
+                "return_seq": false
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },             
+            {
+                "type": "dense",
+                "neurons": 3,
+                "_comment": "activation: linear",
+                "activation": "softmax"
+            }
+        ],
+        
+        
+        
+        
+        
+        
+        "layers_000": [ 
+            {
+                "type": "lstm",
+                "neurons": 100,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },
+            {
+                "type": "gru",
+                "_comment": "modelo 3: 100",
+                "neurons": 50,
+                "return_seq": false
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },             
+            {
+                "type": "dense",
+                "neurons": 3,
+                "_comment": "activation: linear",
+                "activation": "softmax"
+            }
+        ],
+        
+        "layers_001": [
+            {
+                "type": "lstm",
+                "neurons": 200,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "rate": 0.1
+            },
+            {
+                "type": "lstm",
+                "neurons": 150,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "_comment": "modelo 1: 0.5",
+                "rate": 0.5
+            },
+            {
+                "type": "lstm",
+                "neurons": 150,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "_comment": "modelo 1: 0.5",
+                "rate": 0.5
+            },        
+                        {
+                "type": "lstm",
+                "neurons": 100,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "_comment": "modelo 1: 0.5",
+                "rate": 0.5
+            },
+                        {
+                "type": "lstm",
+                "neurons": 50,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "_comment": "modelo 1: 0.5",
+                "rate": 0.5
+            },
+            {
+                "type": "lstm",
+                "neurons": 20,
+                "return_seq": false
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },
+            {
+                "type": "dense",
+                "neurons": 3,
+                "_comment": "activation: linear",
+                "activation": "softmax"
+            }
+        ],        
+        
+        
+        "_comment": "layers para o modelo 3 com GRU -> artigo qiu2020novel",
+        "layers_qiu2020novel": [
+            {
+                "type": "lstm",
+                "neurons": 200,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },
+            {
+                "type": "lstm",
+                "_comment": "modelo 3: 100",
+                "neurons": 150,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },
+            {
+                "type": "lstm",
+                "_comment": "modelo 3: 100",
+                "neurons": 100,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },            
+            {
+                "type": "gru",
+                "_comment": "modelo 3: 100",
+                "neurons": 100,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },
+            {
+                "type": "gru",
+                "_comment": "modelo 3: 100",
+                "neurons": 75,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },
+            {
+                "type": "gru",
+                "_comment": "modelo 3: 50",
+                "neurons": 50,
+                "return_seq": false
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },
+            {
+                "type": "dense",
+                "neurons": 3,
+                "activation": "softmax"
+            }
+        ]
+        
+    }
+}

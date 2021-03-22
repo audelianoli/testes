@@ -1,0 +1,149 @@
+{
+    "_comment": "",
+        
+    "model": 
+    {
+        "_comment": "loss: mse",
+        "_comment": "loss: kullback_leibler_divergence",
+        "_comment": "loss: binary_crossentropy",        
+        "loss": "categorical_crossentropy",
+        
+        "_comment": "opt: SGD",
+        "optimizer": "adam",
+        
+        "save_dir": "saved_models",
+        "model_name": "lstm_gru_simplernn",
+        
+        "_comment": "SimpleRNN or LSTM or GRU -> true",     
+        "use_lstm": true,
+
+        "layers": 
+        [
+            {
+                "type": "simplernn",
+                "neurons": 150,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "rate": 0.1
+            },
+            {
+                "type": "simplernn",
+                "neurons": 125,
+                "return_seq": true
+            },
+            {
+                "type": "lstm",
+                "neurons": 100,
+                "return_seq": true
+            },            
+            {
+                "type": "dropout",
+                "rate": 0.3
+            },
+            {
+                "type": "lstm",
+                "neurons": 100,
+                "return_seq": true
+            },            
+            {
+                "type": "dropout",
+                "rate": 0.3
+            },
+            {
+                "type": "gru",
+                "neurons": 100,
+                "return_seq": true
+            },            
+            {
+                "type": "dropout",
+                "rate": 0.3
+            },
+            {
+                "type": "simplernn",
+                "neurons": 100,
+                "return_seq": true
+            },            
+            {
+                "type": "dropout",
+                "rate": 0.3
+            },
+            {
+                "type": "gru",
+                "neurons": 100,
+                "return_seq": true
+            },            
+            {
+                "type": "dropout",
+                "rate": 0.3
+            },            
+            {
+                "type": "lstm",
+                "neurons": 100,
+                "return_seq": true
+            },            
+            {
+                "type": "dropout",
+                "rate": 0.3
+            },
+            {
+                "type": "gru",
+                "neurons": 100,
+                "return_seq": true
+            },
+            {
+                "type": "simplernn",
+                "neurons": 90,
+                "return_seq": true
+            },            
+            {
+                "type": "dropout",
+                "rate": 0.3
+            },
+            {
+                "type": "gru",
+                "neurons": 80,
+                "return_seq": true
+            }, 
+            {
+                "type": "gru",
+                "neurons": 70,
+                "return_seq": true
+            },            
+            {
+                "type": "dropout",
+                "rate": 0.3
+            },
+            {
+                "type": "lstm",
+                "neurons": 75,
+                "return_seq": true
+            },                      
+            {
+                "type": "gru",
+                "neurons": 75,
+                "return_seq": true
+            },
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },
+            {
+                "type": "lstm",
+                "neurons": 50,
+                "return_seq": false
+            },            
+            {
+                "type": "dropout",
+                "rate": 0.2
+            },
+            {
+                "type": "dense",
+                "neurons": 3,
+                "activation": "softmax"
+            }
+        
+        ]
+    }
+}
